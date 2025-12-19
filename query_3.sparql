@@ -1,0 +1,23 @@
+# ============================================
+# Запрос 2: Сканы с текстовыми расшифровками
+# Онтология: Единое информационное пространство архива А.А. Вознесенского
+# ============================================
+# Находит все сканы, у которых есть текстовые расшифровки,
+# через общий физический объект
+# Ключевые IRI:
+# - Scan: http://webprotege.stanford.edu/RCKpGcAfQNsBuYUgZ7d4DWG
+# - TextTranscript: http://webprotege.stanford.edu/RDnVFCXdu2L3SOmgp48ngYq
+# - isDigitalRepresentationOf: http://webprotege.stanford.edu/RBvfFJmqn4POAUjiFynDPGA
+# ============================================
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX onto: <http://webprotege.stanford.edu/>
+
+SELECT DISTINCT ?scan ?transcript ?physicalObject WHERE {
+  ?scan rdf:type onto:RCKpGcAfQNsBuYUgZ7d4DWG .
+  ?transcript rdf:type onto:RDnVFCXdu2L3SOmgp48ngYq .
+  ?scan onto:RBvfFJmqn4POAUjiFynDPGA ?physicalObject .
+  ?transcript onto:RBvfFJmqn4POAUjiFynDPGA ?physicalObject .
+}
+ORDER BY ?physicalObject

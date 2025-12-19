@@ -1,0 +1,27 @@
+# ============================================
+# Запрос 2: Персоны и их роли
+# Онтология: Единое информационное пространство архива А.А. Вознесенского
+# ============================================
+# Находит всех персон (индивидуалы класса Person) 
+# и связанные с ними роли через свойство hasRole
+# Ключевые IRI:
+# - Person: http://webprotege.stanford.edu/Rhp7wMElaUCZoBatx70bhC
+# - hasRole: http://webprotege.stanford.edu/R8y5NVkQND0cGwY1KNxJqPo
+# ============================================
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX onto: <http://webprotege.stanford.edu/>
+
+SELECT ?person ?personLabel ?personComment ?role ?roleLabel ?roleClass ?roleClassLabel
+WHERE {
+  ?person rdf:type onto:Rhp7wMElaUCZoBatx70bhC .
+  OPTIONAL { ?person rdfs:label ?personLabel . }
+  OPTIONAL { ?person rdfs:comment ?personComment . }
+  ?person onto:R8y5NVkQND0cGwY1KNxJqPo ?role .
+  OPTIONAL { ?role rdfs:label ?roleLabel . }
+  OPTIONAL { ?role rdfs:comment ?roleComment . }
+  ?role rdf:type ?roleClass .
+  OPTIONAL { ?roleClass rdfs:label ?roleClassLabel . }
+}
+ORDER BY ?personLabel
