@@ -4,3 +4,15 @@
 1. av_ontology.owx - файл онтологии
 3. query_1/2/3.sparql - файлы с запросами
 4. review.pdf - подробный отчёт об устройстве онтологии
+
+Структура онтологии:
+
+![](photo_structure.jpg)
+
+Состав классов:
+
+![](photo_classes.jpg)
+
+Метрики:
+
+![](photo_metrics.jpg)
