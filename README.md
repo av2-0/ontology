@@ -8,12 +8,12 @@
 
 Структура онтологии:
 
-![](photo_structure.jpg)
+![](images/photo_structure.jpg)
 
 Состав классов:
 
-![](photo_classes.jpg)
+![](images/photo_classes.jpg)
 
 Метрики:
 
-![](photo_metrics.jpg)
+![](images/photo_metrics.jpg)
